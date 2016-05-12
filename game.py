@@ -1,4 +1,5 @@
 import random
+import argparse
 
 # GLOBAL VARIABLES
 #  Store a predefined order that is important as every 'x' defeats only 'x+1' and 'x+2'
@@ -74,7 +75,8 @@ def rules():
 		- Dr. Sheldon Cooper
 	"""
 
-def main():
+def begin_text_mode():
+	""" Textual Interaction for the user """
 	print (rules())
 	try:
 		no_of_games = int(input("How many games do you want to play? : "))
@@ -87,6 +89,14 @@ def main():
 			game.get_series_progress()
 	except ValueError:
 		print ("That wasn't a valid number. Try again...")
+
+def main():
+	parser = argparse.ArgumentParser()
+	parser.add_argument("-v", "--voice", help="Use voice as the mode of interaction", action="store_true")
+	if parser.parse_args().voice:
+		print ("Voice controls under development")
+	else:
+		begin_text_mode()
 		
 if __name__ == '__main__':
 	main()
