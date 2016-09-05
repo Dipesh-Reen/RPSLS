@@ -91,7 +91,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--voice", help="Use voice as the mode of interaction", action="store_true")
     if parser.parse_args().voice:
-        print ("Voice controls under development")
+        print ("Voice controls under development")     # needs implementation
     else:
         begin_text_mode()
 
